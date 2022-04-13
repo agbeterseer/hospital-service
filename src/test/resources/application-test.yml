@@ -1,0 +1,20 @@
+server:
+  port: ${SERVER_PORT:8070}
+  error:
+    include-message: always
+  servlet:
+    context-path: /hospital-service
+
+spring:
+  datasource:
+    url: ${POSTGRES_URL:jdbc:h2:mem:db;DB_CLOSE_DELAY=-1}
+    username: ${POSTGRES_USERNAME:sa}
+    password: ${POSTGRES_PASSWORD:sa}
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
